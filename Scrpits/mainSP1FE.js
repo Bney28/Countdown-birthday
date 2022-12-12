@@ -1,22 +1,55 @@
-const dias = document.querySelector("#days")
-const horas = document.querySelector("#hours")
-const minutos = document.querySelector("#minutes")
-const segundos = document.querySelector("#seconds")
+const divMeses = document.querySelector("#months")
+const divDias = document.querySelector("#days")
+const divHoras = document.querySelector("#hours")
+const divMinutos = document.querySelector("#minutes")
+const divSegundos = document.querySelector("#seconds")
 
 const fechaActual = new Date()
-console.log(fechaActual);
+console.log("Hoy es " + fechaActual);
 
-const cumpleaños = new Date("Mon Aug 07 2023 12:00:00")
-console.log(cumpleaños);
+const cumpleaños = new Date("Mon Aug 07 2023 00:00:00")
+console.log("Mi cumpleaños es " + cumpleaños);
 
-const showCountDown = () =>{
-    const resta = cumpleaños - fechaActual
-    console.log(resta);
+const showCountDown = (contador) =>{
 
-    const d = Math.floor(resta / 1000 / 60 / 60 / 24);
-    const h = Math.floor(resta / 1000 / 60 / 60) % 24;
-    const m = Math.floor(resta / 1000 / 60) % 60;
-    const s = Math.floor(resta / 1000) % 60
+    const meses = Math.floor(contador / 1000 / 60 / 60 / 24 / 30);
+    const dias = Math.floor(contador / 1000 / 60 / 60 / 24) % 30;
+    const horas = Math.floor(contador / 1000 / 60 / 60) % 24;
+    const minutos = Math.floor(contador / 1000 / 60) % 60;
+    const segundos = Math.floor(contador / 1000) % 60
+
+    divMeses.innerHTML = meses
+    divDias.innerHTML = dias
+    divHoras.innerHTML = horas
+    divMinutos.innerHTML = minutos
+    divSegundos.innerHTML = segundos
 }
 
-showCountDown()
+setInterval(() => {
+    const fechaActual = new Date();
+    const countDown = cumpleaños - fechaActual
+    showCountDown(countDown)
+}, 1000);
+
+
+// Calculadora
+
+let resultado = ""
+let pantalla = ""
+let divPantalla = document.querySelector(".pantalla")
+
+const ver = (numero) => {
+    pantalla += numero
+    divPantalla.innerHTML = pantalla
+}
+
+const borrar = () => {
+    pantalla = ""
+    pantalla.innerHTML= ""
+}
+
+const calcular = () =>{
+    resultado = eval(pantalla)
+    divPantalla.innerHTML = pantalla
+    pantalla = ""
+}
