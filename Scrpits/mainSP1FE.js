@@ -18,11 +18,11 @@ const showCountDown = (contador) =>{
     const minutos = Math.floor(contador / 1000 / 60) % 60;
     const segundos = Math.floor(contador / 1000) % 60
 
-    divMeses.innerHTML = meses
-    divDias.innerHTML = dias
-    divHoras.innerHTML = horas
-    divMinutos.innerHTML = minutos
-    divSegundos.innerHTML = segundos
+    divMeses.innerHTML = meses <10 ? `0${meses}` : meses;
+    divDias.innerHTML = dias <10 ? `0${dias}` : dias;
+    divHoras.innerHTML = horas <10 ? `0${horas}` : horas;
+    divMinutos.innerHTML = minutos <10 ? `0${minutos}` : minutos;
+    divSegundos.innerHTML = segundos <10 ? `0${segundos}` : segundos;
 }
 
 setInterval(() => {
