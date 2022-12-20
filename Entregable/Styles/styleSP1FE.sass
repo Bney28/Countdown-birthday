@@ -1,0 +1,96 @@
+@import url('https://fonts.googleapis.com/css2?family=Red+Hat+Text:wght@400;700&display=swap')
+
+$Grayish-blue: hsl(237, 18%, 59%)
+$Soft-red: hsl(345, 95%, 68%)
+$White: hsl(0, 0%, 100%)
+$Dark-desaturated-blue: hsl(236, 21%, 26%)
+$Very-dark-blue: hsl(235, 16%, 14%)
+$Very-dark-mostly-black-blue: hsl(234, 17%, 12%)
+
+
+*
+    font-family: 'Red Hat Text', sans-serif
+
+body 
+    background-color: $Very-dark-blue
+    background-image: url(../Imgs/bg-stars.svg)
+
+    .titleText 
+        color: $White
+        margin-top: 10%
+        text-transform: uppercase
+        font-weight: 600
+        letter-spacing: .5em
+        text-align: center
+        font-size: 14px
+
+    #countDown 
+        display: flex
+        flex-direction: row
+        gap: 2em
+        justify-content: center
+
+        .time
+            width: 95px
+
+        .numberTitle
+            display: flex
+            flex-direction: column
+            align-items: center
+            margin-top: 1em 
+            background-color: $Dark-desaturated-blue
+            color: $Soft-red
+            padding: .3em
+            border-radius: .2em
+            font-size: 50px
+            font-weight: 700
+
+        .text
+            text-align: center
+            font-size: 14px
+            text-transform: uppercase
+            color: $Grayish-blue
+            font-weight: 500
+            letter-spacing: .2em
+
+    .iconFooter
+        position: relative
+        display: flex
+        justify-content: center
+        width: 100%
+        gap: 1.5em
+        margin-top: 10%
+        z-index: 3
+
+    .imgHills
+        position: absolute
+        bottom: 0
+        z-index: 1
+        width: 100vw
+
+
+@media screen and (max-width: 650px)
+    
+    #countDown 
+        width: 100vw
+        gap: .8em
+        
+        .text
+            font-size: 10px
+        
+        
+        .time
+            width: 55px
+    
+    
+        .numberTitle
+            font-size: 30px
+        
+
+    .titleText 
+            font-size: 17px
+            margin-top: 35%
+    
+    .iconFooter
+        margin-top: 55%
+    
