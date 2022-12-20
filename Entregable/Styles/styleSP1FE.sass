@@ -13,7 +13,7 @@ $Very-dark-mostly-black-blue: hsl(234, 17%, 12%)
 
 body 
     background-color: $Very-dark-blue
-    background-image: url(../Imgs/bg-stars.svg)
+    background-image: url(https://raw.githubusercontent.com/aUnicornDev/launch-countdown-timer-main/2cd947eac6e79b94080017167f4df2d3096b4e6e/images/bg-stars.svg)
 
     .titleText 
         color: $White
@@ -44,6 +44,7 @@ body
             border-radius: .2em
             font-size: 50px
             font-weight: 700
+            box-shadow: -1px 11px 8px -6px rgb(0, 0, 0 / 75%)
 
         .text
             text-align: center
@@ -69,28 +70,28 @@ body
         width: 100vw
 
 
-@media screen and (max-width: 650px)
-    
-    #countDown 
-        width: 100vw
-        gap: .8em
+@media (max-width: 600px)
+    body
+        #countDown 
+            width: 100vw
+            gap: .8em
+            
+            .text
+                font-size: 10px
+            
+            
+            .time
+                width: 55px
         
-        .text
-            font-size: 10px
         
-        
-        .time
-            width: 55px
-    
-    
-        .numberTitle
-            font-size: 30px
-        
+            .numberTitle
+                font-size: 30px
+            
 
-    .titleText 
-            font-size: 17px
-            margin-top: 35%
-    
-    .iconFooter
-        margin-top: 55%
+        .titleText 
+                font-size: 17px
+                margin-top: 35%
+        
+        .iconFooter
+            margin-top: 55%
     
